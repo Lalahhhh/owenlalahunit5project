@@ -1,6 +1,8 @@
+// This organizes the code and adds a whole new section of it to give the program some color 
 function doSomething () {
     timer.background(function () {
         if (Side_3_answer < 10) {
+            // If the answer is less than 10, the program will display an ice cream cone
             ice_cream = sprites.create(img`
                 ............3333bb..bb33333.....
                 ........3bb31111d3b311d111d33...
@@ -39,6 +41,7 @@ function doSomething () {
             game.showLongText(Side_3_answer, DialogLayout.Bottom)
             ice_cream.sayText("ENJOY!")
         } else {
+            // If the answer of side C is greater than 10, the program will display a donut
             while (Side_3_answer > 10) {
                 donut = sprites.create(img`
                     ..............bbbbbbb...........
@@ -84,22 +87,27 @@ function doSomething () {
 let donut: Sprite = null
 let ice_cream: Sprite = null
 let Side_3_answer = 0
-// dont forget to add comment!!!
+// background color
 scene.setBackgroundColor(13)
+// Tells users the function of the program and gives instruction
 game.showLongText("Pythagorean Theorem Solver when you are given A & B: Enter two the measurements of two sides of your triangle ", DialogLayout.Center)
 pause(1000)
+// tells user to input the first side of their triangle
 game.showLongText("Enter side 1 (click A to continue)", DialogLayout.Center)
 let Side_1 = game.askForNumber("")
 game.showLongText("Enter side 2", DialogLayout.Center)
 let Side_2 = game.askForNumber("")
+// organizes inputted values and displays them to the user for them to make sure they are correct
 let text_list = [Side_1, Side_2]
 game.showLongText("So your two numbers are...", DialogLayout.Bottom)
 game.showLongText(text_list, DialogLayout.Bottom)
+// the following three blocks are the "calculation" portion of the program
 let side_1_answer = Side_1 * Side_1
 let side_2_answer = Side_2 * Side_2
 Side_3_answer = Math.sqrt(side_1_answer + side_2_answer)
 game.showLongText("Calculating...", DialogLayout.Center)
 pause(1000)
+// shows the final answer that the user is looking for
 game.showLongText("The final answer of side 3 is...", DialogLayout.Center)
 pause(1000)
 doSomething()
