@@ -1,4 +1,4 @@
-// This organizes the code and adds a whole new section of it to give the program some color 
+// This organizes the code and adds a whole new section of it to give the program some color
 function doSomething () {
     timer.background(function () {
         if (Side_3_answer < 10) {
